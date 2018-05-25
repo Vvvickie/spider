@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/questions.css">
+</head>
+<body>
+<div class="Q-container">
+
+    <h3 class="Q-head3">题目描述</h3>
+    <section class="Q-description">
+        <p class="Q-details">输入三个自然数N，p，q （1<=p<=N，1<=q<=N），输出在一个N*N格的棋盘中（行列均从1开始编号），与格子（p，q）同行、同列、同一对角线的所有格子的位置。如：n=4，p=2，q=3表示了棋盘中的第二行第三列的格子，如右图：</p>
+        <img src="imgs/Q10.png" alt="" CLASS="Q1-img">
+    </section>
+    <h3 class="Q-head3">输入INPUT：(grid.in)</h3>
+    <section class="input">
+        <div >
+            <h5 class="input-title">输入格式</h5>
+            <p class="input-example">一行，三个自然数N，p，q，相邻两个数之间用单个空格隔开。1 <= N <= 10。</p>
+        </div>
+        <div class="input-style">
+            <h5 class="input-title">输入样例</h5>
+            <p class="input-example">4 2 3</p>
+        </div>
+    </section>
+    <h3 class="Q-head3">输出OUTPUT：(grid.out)</h3>
+    <section class="output">
+        <div >
+            <h5 class="input-title">输出格式</h5>
+            <p class="input-example">四行：</p>
+            <p class="input-example">第一行：从左到右输出同一行格子位置；</p>
+            <p class="input-example">第二行：从上到下输出同一列格子位置；</p>
+            <p class="input-example">第三行：从左上到右下输出同一对角线格子位置；</p>
+            <p class="input-example">第四行：从左下到右上输出同一对角线格子位置。</p>
+            <p class="input-example"></p>
+            <p class="input-example">其中每个格子位置用如下格式输出：(x,y)，x为行号，y为列号，采用英文标点，中间无空格。</p>
+            <p class="input-example">相邻两个格子位置之间用单个空格隔开。</p>
+        </div>
+        <div class="input-style">
+            <h5 class="input-title">输出样例</h5>
+            <p class="input-example">(2,1) (2,2) (2,3) (2,4)</p>
+            <p class="input-example">(1,3) (2,3) (3,3) (4,3)</p>
+            <p class="input-example">(1,2) (2,3) (3,4)</p>
+            <p class="input-example">(4,1) (3,2) (2,3) (1,4）</p>
+        </div>
+    </section>
+</div>
+</body>
+</html>

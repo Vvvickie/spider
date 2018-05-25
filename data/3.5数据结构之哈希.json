@@ -1,0 +1,34 @@
+[
+  {
+    "id": "1551",
+    "category": "3.5数据结构之哈希",
+    "title": "1551:Sumsets",
+    "description": "<img src=\"http://media.openjudge.cn/images/2549_1.jpg\" align=\"right\">Given S, a set of integers, find the largest d such that a + b + c = d where a, b, c, and d are distinct elements of S. ",
+    "img": "",
+    "inputTip": "Several S, each consisting of a line containing an integer 1 <= n <= 1000 indicating the number of elements in S, followed by the elements of S, one per line. Each element of S is a distinct integer between -536870912 and +536870911 inclusive. The last line of input contains 0. ",
+    "inputStyle": "输入",
+    "outputTip": "输出",
+    "outputStyle": "For each S, a single line containing d, or a single line containing \"no solution\". ",
+    "inputExample": "<pre>5\n2 \n3 \n5 \n7 \n12\n5\n2 \n16 \n64 \n256 \n1024\n0\n</pre>",
+    "outputExample": "<pre>12\nno solution\n</pre>",
+    "tip": "Waterloo local 2001.06.02",
+    "timeLimited": "1000ms",
+    "spaceLimited": "65536kB"
+  },
+  {
+    "id": "1807",
+    "category": "3.5数据结构之哈希",
+    "title": "1807:正方形",
+    "description": "给出平面上一些点的坐标，统计由这些点可以组成多少个正方形。注意：正方形的边不一定平行于坐标轴。",
+    "img": "",
+    "inputTip": "输入包括多组测试数据。每组的第一行是一个整数n (1 <= n <= 1000)，表示平面上点的数目，接下来n行，每行包括两个整数，分别给出一个点在平面上的x坐标和y坐标。输入保证：平面上点的位置是两两不同的，而且坐标的绝对值都不大于20000。最后一组输入数据中n = 0，这组数据表示输入的结束，不用进行处理。",
+    "inputStyle": "输入",
+    "outputTip": "输出",
+    "outputStyle": "对每组输入数据，输出一行，表示这些点能够组成的正方形的数目。",
+    "inputExample": "<pre>4\n1 0\n0 1\n1 1\n0 0\n9\n0 0\n1 0\n2 0\n0 2\n1 2\n2 2\n0 1\n1 1\n2 1\n4\n-2 5\n3 7\n0 0\n5 2\n0\n</pre>",
+    "outputExample": "<pre>1\n6\n1\n</pre>",
+    "tip": "翻译自Rocky Mountain 2004的试题",
+    "timeLimited": "8000ms",
+    "spaceLimited": "4000ms"
+  }
+]

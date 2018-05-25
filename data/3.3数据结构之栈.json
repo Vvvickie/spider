@@ -1,0 +1,50 @@
+[
+  {
+    "id": "1696",
+    "category": "3.3数据结构之栈",
+    "title": "1696:逆波兰表达式",
+    "description": "逆波兰表达式是一种把运算符前置的算术表达式，例如普通的表达式2 + 3的逆波兰表示法为+ 2 3。逆波兰表达式的优点是运算符之间不必有优先级关系，也不必用括号改变运算次序，例如(2 + 3) * 4的逆波兰表示法为* + 2 3 4。本题求解逆波兰表达式的值，其中运算符包括+ - * /四个。",
+    "img": "",
+    "inputTip": "输入为一行，其中运算符和运算数之间都用空格分隔，运算数是浮点数。",
+    "inputStyle": "输入",
+    "outputTip": "输出",
+    "outputStyle": "输出为一行，表达式的值。可直接用printf(\"%f\\n\", v)输出表达式的值v。",
+    "inputExample": "<pre>* + 11.0 12.0 + 24.0 35.0</pre>",
+    "outputExample": "<pre>1357.000000</pre>",
+    "tip": "可使用atof(str)把字符串转换为一个double类型的浮点数。atof定义在math.h中。此题可使用函数递归调用的方法求解。",
+    "timeLimited": "1000ms",
+    "spaceLimited": "65536kB"
+  },
+  {
+    "id": "3340",
+    "category": "3.3数据结构之栈",
+    "title": "3340:RPN Calculator",
+    "description": "<p>Reverse Polish notation (or just RPN) by analogy with the related Polish notation, a prefix notation introduced in 1920 by the Polish mathematician Jan Łukasiewicz, is a mathematical notation wherein every operator follows all of its operands. It is also known as Postfix notation.</p><p>In Reverse Polish notation the operators follow their operands; for instance, to add three and four one would write \"3 4 +\" rather than \"3 + 4\". If there are multiple operations, the operator is given immediately after its second operand; so the expression written \"3 − 4 + 5\" in conventional infix notation would be written \"3 4 − 5 +\" in RPN: first subtract 4 from 3, then add 5 to that. An advantage of RPN is that it obviates the need for parentheses that are required by infix. While \"3 − 4 * 5\" can also be written \"3 − (4 * 5)\", that means something quite different from \"(3 − 4) * 5\", and only the parentheses disambiguate the two meanings. In postfix, the former would be written \"3 4 5 * −\", which unambiguously means \"3 (4 5 *) −\".</p><p>You were asked to design a simple RPN calculator, which will support the “+”, “-“, “*”, “/”(the absolute value of the divisor will not less then 10^-9) and “^”(power operator, if the base number b<=0, the exponential e must be a positive integer not greater than 10^9) operators. You can assume all the numbers during the calculation can fit into a double-precision floating point number.</p><p>In addition, our calculator has some memory. Each time we calculate an expression, the smallest number in the memory will be erased, and replace it with the value of the expression.</p>",
+    "img": "",
+    "inputTip": "The first line contains an integer n, which is the memory size of our calculator.From the second line, we will give n numbers, which is the initial value of the memory. each line except last will have 10 numbers.And then each line has a valid RPN expression we previously described, end with “=”, which is the command for calculation. Each term will no longer than 20 characters.",
+    "inputStyle": "输入",
+    "outputTip": "输出",
+    "outputStyle": "For each expression, output the value of it in a line.And then output an empty line to separate the two parts.At last, output the all the numbers in memory, in increasing order, 10 numbers per line.Each number should be formatted in scientific notation with 6 digits after decimal point and 2 digits of exponential, such like “%e” format string of printf() function in C. The numbers in a line should be separated by a space.",
+    "inputExample": "<pre>4\n1e6 1e-6 0.001 1000\n1 2 + 3 4 + * =\n1 0.1 / 8 ^ =</pre>",
+    "outputExample": "<pre>2.100000e+01\n1.000000e+08\n\n2.100000e+01 1.000000e+03 1.000000e+06 1.000000e+08</pre>",
+    "tip": "Huge input, scanf() is recommended%e格式输出在windows环境下指数部分为3位，在系统的测试环境下为2位。",
+    "timeLimited": "1000ms",
+    "spaceLimited": "10000kB"
+  },
+  {
+    "id": "6263",
+    "category": "3.3数据结构之栈",
+    "title": "6263:布尔表达式",
+    "description": "<p>输入一个布尔表达式，请你输出它的真假值。\n<br>比如：( V | V ) & F & ( F | V )\n<br>V表示true，F表示false，&表示与，|表示或，!表示非。\n<br>上式的结果是F<br></p>",
+    "img": "",
+    "inputTip": "输入包含多行，每行一个布尔表达式，表达式中可以有空格，总长度不超过1000",
+    "inputStyle": "输入",
+    "outputTip": "输出",
+    "outputStyle": "对每行输入，如果表达式为真，输出\"V\",否则出来\"F\"",
+    "inputExample": "<pre>( V | V ) & F & ( F| V)\n!V | V & V & !F & (F | V ) & (!F | F | !V & V)\n(F&F|V|!V&!F&!(F|F&V))</pre>",
+    "outputExample": "<pre>F\nV\nV</pre>",
+    "tip": "",
+    "timeLimited": "1000ms",
+    "spaceLimited": "65536kB"
+  }
+]

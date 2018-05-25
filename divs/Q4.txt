@@ -1,0 +1,29 @@
+<div class="Q-container">
+
+    <h3 class="Q-head3">题目描述</h3>
+    <section class="Q-description">
+        <p class="Q-details">读入一个双精度浮点数，保留12位小数，输出这个浮点数。</p>
+    </section>
+    <h3 class="Q-head3">输入INPUT：输入</h3>
+    <section class="input">
+        <div >
+            <h5 class="input-title">输入格式</h5>
+            <p class="input-example">只有一行，一个双精度浮点数。</p>
+        </div>
+        <div class="input-style">
+            <h5 class="input-title">输入样例</h5>
+            <p class="input-example"><pre>3.1415926535798932</pre></p>
+        </div>
+    </section>
+    <h3 class="Q-head3">输出OUTPUT：也只有一行，保留12位小数的浮点数。</h3>
+    <section class="output">
+        <div >
+            <h5 class="input-title">输出格式</h5>
+            <p class="input-example">输出</p>
+        </div>
+        <div class="input-style">
+            <h5 class="input-title">输出样例</h5>
+            <p class="input-example"><pre>3.141592653580</pre></p>
+        </div>
+    </section>
+</div>

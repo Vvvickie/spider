@@ -1,0 +1,33 @@
+<div class="Q-container">
+
+    <h3 class="Q-head3">题目描述</h3>
+    <section class="Q-description">
+        <p class="Q-details">给定一个字符，用它构造一个对角线长5个字符，倾斜放置的菱形。</p>
+    </section>
+    <h3 class="Q-head3">输入INPUT：输入</h3>
+    <section class="input">
+        <div >
+            <h5 class="input-title">输入格式</h5>
+            <p class="input-example">输入只有一行， 包含一个字符。</p>
+        </div>
+        <div class="input-style">
+            <h5 class="input-title">输入样例</h5>
+            <p class="input-example"><pre>*</pre></p>
+        </div>
+    </section>
+    <h3 class="Q-head3">输出OUTPUT：该字符构成的菱形。</h3>
+    <section class="output">
+        <div >
+            <h5 class="input-title">输出格式</h5>
+            <p class="input-example">输出</p>
+        </div>
+        <div class="input-style">
+            <h5 class="input-title">输出样例</h5>
+            <p class="input-example"><pre>  *</p>
+            <p class="input-example"> ***</p>
+            <p class="input-example">*****</p>
+            <p class="input-example"> ***</p>
+            <p class="input-example">  *</pre></p>
+        </div>
+    </section>
+</div>

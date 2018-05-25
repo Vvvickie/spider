@@ -1,0 +1,34 @@
+[
+  {
+    "id": "1758",
+    "category": "3.6数据结构之二叉树",
+    "title": "1758:二叉树",
+    "description": "<center><img src=\"http://media.openjudge.cn/images/2756_1.jpg\"></center><br>如上图所示，由正整数1, 2, 3, ...组成了一棵无限大的二叉树。从某一个结点到根结点（编号是1的结点）都有一条唯一的路径，比如从10到根结点的路径是(10, 5, 2, 1)，从4到根结点的路径是(4, 2, 1)，从根结点1到根结点的路径上只包含一个结点1，因此路径就是(1)。对于两个结点x和y，假设他们到根结点的路径分别是(x<sub>1</sub>, x<sub>2</sub>, ... ,1)和(y<sub>1</sub>, y<sub>2</sub>, ... ,1)（这里显然有x = x<sub>1</sub>，y = y<sub>1</sub>），那么必然存在两个正整数i和j，使得从x<sub>i</sub> 和 y<sub>j</sub>开始，有x<sub>i</sub> = y<sub>j</sub> , x<sub>i + 1</sub> = y<sub>j + 1</sub>, x<sub>i + 2</sub> = y<sub>j + 2</sub>,... 现在的问题就是，给定x和y，要求x<sub>i</sub>（也就是y<sub>j</sub>）。",
+    "img": "",
+    "inputTip": "输入只有一行，包括两个正整数x和y，这两个正整数都不大于1000。",
+    "inputStyle": "输入",
+    "outputTip": "输出",
+    "outputStyle": "输出只有一个正整数xi。",
+    "inputExample": "<pre>10 4</pre>",
+    "outputExample": "<pre>2</pre>",
+    "tip": "",
+    "timeLimited": "1000ms",
+    "spaceLimited": "65536kB"
+  },
+  {
+    "id": "2392",
+    "category": "3.6数据结构之二叉树",
+    "title": "2392:Clear Cold Water",
+    "description": "The steamy, sweltering summers of Wisconsin's dairy district stimulate the cows to slake their thirst. Farmer John pipes clear cold water into a set of N (3 <= N <= 99999; N odd) branching pipes conveniently numbered 1..N from a pump located at the barn. As the water flows through the pipes, the summer heat warms it.  Bessie wants to find the coldest water so she can enjoy the weather more than any other cow.<br><br>She has mapped the entire set of branching pipes and noted that they form a tree with its root at the farm and furthermore that every branch point has exactly two pipes exiting from it. Surprisingly, every pipe is exactly one unit in length; of course, all N pipes connect up in one way or another to the pipe-tree.<br><br>Given the map of all the pipe connctions, make a list of the distance from the barn for every branching point and endpoint.Bessie will use the list to find the very coldest water.<br><br>The endpoint of a pipe, which might enter a branching point or might be a spigot, is named by the pipe's number. The map contains C (1 <= C <= N) connections, each of which specifies three integers: the endpoint E_i (1 <= E_i <= N) of a pipe and two branching pipes B1_i and B2_i (2 <= B1_i <= N; 2 <= B2_i <= N). Pipe number 1 connects to the barn; the distance from its endpoint to the barn is 1.<br>",
+    "img": "",
+    "inputTip": "* Line 1: Two space-separated integers: N and C* Lines 2..C+1: Line i+1 describes branching point i with three space-separated integers: E_i, B1_i, and B2_i",
+    "inputStyle": "输入",
+    "outputTip": "输出",
+    "outputStyle": "* Lines 1..N: Line i of the output contains a single integer that is the distance from the barn to the endpoint of pipe i",
+    "inputExample": "<pre>5 2\n3 5 4\n1 2 3\n</pre>",
+    "outputExample": "<pre>1\n2\n2\n3\n3\n</pre>",
+    "tip": "INPUT DETAILS:The input above describes this pipe map:                    +------+                    | Barn |                    +------+                       | 1                       *                    2 / \\ 3                         *                      4 / \\ 5OUTPUT DETAILS:Pipe 1 is always distance 1 from the barn. Pipes 2 and 3 connect directly to pipe 1 and thus are distance 2 from the barn. Pipes 4 and 5, which connect to pipe 3, are distance 3 from the barn.",
+    "timeLimited": "10000ms",
+    "spaceLimited": "1000ms"
+  }
+]

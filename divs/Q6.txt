@@ -1,0 +1,32 @@
+<div class="Q-container">
+
+    <h3 class="Q-head3">题目描述</h3>
+    <section class="Q-description">
+        <p class="Q-details">读入一个双精度浮点数，分别按输出格式“%f”，“%f”保留5位小数，“%e”和“%g”的形式输出这个整数，每次在单独一行上输出。</p>
+    </section>
+    <h3 class="Q-head3">输入INPUT：输入</h3>
+    <section class="input">
+        <div >
+            <h5 class="input-title">输入格式</h5>
+            <p class="input-example">一个双精度浮点数。</p>
+        </div>
+        <div class="input-style">
+            <h5 class="input-title">输入样例</h5>
+            <p class="input-example"><pre>12.3456789</pre></p>
+        </div>
+    </section>
+    <h3 class="Q-head3">输出OUTPUT：输出有四行：第一行是按“%f”输出的双精度浮点数；第二行是按“%f”保留5位小数输出的双精度浮点数；第三行是按“%e”输出的双精度浮点数；第四行是按“%g”输出的双精度浮点数。</h3>
+    <section class="output">
+        <div >
+            <h5 class="input-title">输出格式</h5>
+            <p class="input-example">输出</p>
+        </div>
+        <div class="input-style">
+            <h5 class="input-title">输出样例</h5>
+            <p class="input-example"><pre>12.345679</p>
+            <p class="input-example">12.34568</p>
+            <p class="input-example">1.234568e+001</p>
+            <p class="input-example">12.3457</pre></p>
+        </div>
+    </section>
+</div>

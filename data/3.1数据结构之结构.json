@@ -1,0 +1,18 @@
+[
+  {
+    "id": "6377",
+    "category": "3.1数据结构之结构",
+    "title": "6377:生日相同 2.0",
+    "description": "<p>在一个有180人的大班级中，存在两个人生日相同的概率非常大，现给出每个学生的名字，出生月日。试找出所有生日相同的学生。<br></p>",
+    "img": "",
+    "inputTip": "第一行为整数n，表示有n个学生，n ≤ 180。此后每行包含一个字符串和两个整数，分别表示学生的名字（名字第一个字母大写，其余小写，不含空格，且长度小于20）和出生月(1 ≤ m ≤ 12)日(1 ≤ d ≤ 31)。名字、月、日之间用一个空格分隔",
+    "inputStyle": "输入",
+    "outputTip": "输出",
+    "outputStyle": "每组生日相同的学生，输出一行，其中前两个数字表示月和日，后面跟着所有在当天出生的学生的名字，数字、名字之间都用一个空格分隔。对所有的输出，要求按日期从前到后的顺序输出。 对生日相同的名字，按名字从短到长按序输出，长度相同的按字典序输出。如没有生日相同的学生，输出”None”",
+    "inputExample": "<pre>6\nAvril 3 2\nCandy 4 5\nTim 3 2\nSufia 4 5\nLagrange 4 5\nBill 3 2</pre>",
+    "outputExample": "<pre>3 2 Tim Bill Avril\n4 5 Candy Sufia Lagrange</pre>",
+    "tip": "",
+    "timeLimited": "1000ms",
+    "spaceLimited": "65536kB"
+  }
+]
