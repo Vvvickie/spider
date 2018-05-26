@@ -3,33 +3,39 @@ var fs = require('fs');
 var cheerio = require('cheerio');
 var request = require('request');
 
-var url = "http://noi.openjudge.cn/ch0112/01/";
+var urlIndex = "http://noi.openjudge.cn/ch0402/";
 
-var idList = ['01','02','03','04','05','06','07','08','09','10'];
-//初始url
+const sipderid = require('./spiderid');
+
+sipderid.getIdLists(urlIndex).then(function (idList) {
+    url = urlIndex + idList[0];
+    fetchPage(url,idList);
+});
 
 var questions =[];
 
 var index = 1;
 
-function fetchPage(x) {
+function fetchPage(url,idList) {
     //封装了一层函数
-    startRequest(x);
-
+    startRequest(url,idList);
 }
 
-
-function startRequest(x) {
-
-
-
+function startRequest(url,idList) {
     //采用http模块向服务器发起一次get请求
-    http.get(x, function (res) {
-
-
-
-
+    http.get(url, function (res) {
+        var error;
+        if(res.statusCode !== 200){
+            error = new Error('请求失败。\n' + `状态码: ${statusCode}`);
+        }
+        if (error) {
+            console.error(error.message);
+            // 消耗响应数据以释放内存
+            res.resume();
+            return;
+        }
         var html = '';        //用来存储请求网页的整个html内容
+
         res.setEncoding('utf-8'); //防止中文乱码
         //监听data事件，每次取一块数据
         res.on('data', function (chunk) {
@@ -52,12 +58,9 @@ function startRequest(x) {
 
             var description = $('.problem-content dd:nth-of-type(1)').html();
 
-            console.log(id);
-
-            var img =  $('.problem-content img');
+            var img = '';
 
             var inputTip = $('.problem-content dd:nth-of-type(2)').text();
-
 
             var inputStyle = $('.problem-content dt:nth-of-type(2)').text();
 
@@ -71,10 +74,13 @@ function startRequest(x) {
 
             var tip = $('.problem-content dd:nth-of-type(6)').text();
 
-            // if(img === undefined){
-            //     img = "";
-            // }
+            if($('.problem-content img')[0]){
 
+                $('.problem-content img').each(function (index, item){
+                    img += 'Q'+ id +'_'+ index+ '.jpg\t';
+                })
+                saveImg($,id);
+            }
 
             var question_item = {
 
@@ -82,7 +88,7 @@ function startRequest(x) {
                 category:category,
                 title:title,
                 description:description,
-                img:"",
+                img:img,
                 inputTip:inputTip,
                 inputStyle:inputStyle,
                 outputTip:outputTip,
@@ -94,10 +100,8 @@ function startRequest(x) {
                 spaceLimited:spaceLimited
             };
 
-
-            //savedContent($, question_item.category)
-
-            if(img[0]){savedImg($,category,question_item.id);}
+            console.log(question_item.id);
+            //saveContent($, question_item.category)
 
             questions.push(question_item);
 
@@ -110,7 +114,8 @@ function startRequest(x) {
 
                 if (index === 0) {
 
-                    savedContent($, category, questions);
+                    saveContent($, category, questions);
+
                 } else if (index < idList.length) {
                     indexstr = idList[index - 1].toString();
                 }
@@ -119,18 +124,17 @@ function startRequest(x) {
                     index = -1;
                 }
 
-                var nextLink = "http://noi.openjudge.cn/ch0112/" + indexstr + '/';
+                var nextLink = urlIndex + indexstr + '/';
 
 
                 if (index != 0) {
                     console.log(nextLink);
-                    fetchPage(nextLink);
+                    fetchPage(nextLink,idList);
                 }
             }
             else if(idList.length === 1){
-                savedContent($, category, questions);
+                saveContent($, category, questions);
             }
-
 
         });
 
@@ -140,32 +144,29 @@ function startRequest(x) {
 
 }
 
-function savedContent($, category,questions) {
-
-    //console.log(questions);
-
+function saveContent($, category,questions) {
     fs.writeFile('./data/'+category+'.json', JSON.stringify(questions,null,2),  function(err) {
         if (err) {
             return console.error(err);
         }
 
     });
-
-
 }
 
 //该函数的作用：在本地存储所爬取到的图片资源
-function savedImg($, category,id) {
+function saveImg($, id) {
 
     $('.problem-content img').each(function (index, item) {
 
         var img_filename = 'Q'+ id +'_'+ index+ '.jpg';
 
-        var img_src = item.attribs.src; //获取图片的url
+        //var img_src = item.attribs.src; //获取图片的url
+        var img_src = $(item).attr('src'); //获取图片的url
+        //此处于jquery一样，转为$对象，即可获取src属性
 
         if(img_src){
 
-//采用request模块，向服务器发起一次请求，获取图片资源
+        //采用request模块，向服务器发起一次请求，获取图片资源
         request.head(img_src,function(err,res,body){
             if(err){
                 console.log(err);
@@ -174,4 +175,3 @@ function savedImg($, category,id) {
         request(img_src).pipe(fs.createWriteStream('./image/'+img_filename));}     //通过流的方式，把图片写到本地/image目录下，并用新闻的标题和图片的标题作为图片的名称。
     })
 }
-fetchPage(url);
